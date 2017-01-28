@@ -24,9 +24,7 @@ public class MainExecutor {
         pds.createPerson();
         tx.commit();
 
-        pds.findAllPersons().stream().forEach((p) -> {
-            System.out.println(p.getFirstName() + " " + p.getLastName());
-        });        
+        pds.findAllPersons().stream().forEach(System.out::println);        
     }
     
 }

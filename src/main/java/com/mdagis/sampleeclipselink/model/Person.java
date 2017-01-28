@@ -79,20 +79,16 @@ public class Person implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Person)) {
             return false;
         }
         Person other = (Person) object;
-        if ((this.personId == null && other.personId != null) || (this.personId != null && !this.personId.equals(other.personId))) {
-            return false;
-        }
-        return true;
+        return !((this.personId == null && other.personId != null) || (this.personId != null && !this.personId.equals(other.personId)));
     }
 
     @Override
     public String toString() {
-        return "com.mdagis.sampleeclipselink.model.Person[ personId=" + personId + " ]";
+        return this.firstName + " " + this.lastName;
     }
 
 }
