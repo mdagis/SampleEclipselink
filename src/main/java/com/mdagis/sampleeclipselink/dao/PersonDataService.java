@@ -1,10 +1,8 @@
 package com.mdagis.sampleeclipselink.dao;
 
-import com.mdagis.sampleeclipselink.NameCreator;
 import com.mdagis.sampleeclipselink.model.Person;
 import java.util.List;
 import javax.persistence.EntityManager;
-import org.kohsuke.randname.RandomNameGenerator;
 
 /**
  *
@@ -20,7 +18,7 @@ public class PersonDataService {
 
     public void createPerson() {
     
-        Person person = new Person(NameCreator.createRandomName(), NameCreator.createRandomName());
+        Person person = new Person("Donald", "Duck");
         em.persist(person);
     }
 
